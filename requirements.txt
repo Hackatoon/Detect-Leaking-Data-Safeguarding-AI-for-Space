@@ -1,0 +1,26 @@
+# Requirements file for the Hidden Message Detector
+
+# Core dependencies
+pandas>=1.3.0
+numpy>=1.20.0
+
+# PDF processing
+PyMuPDF>=1.20.0
+pdfplumber>=0.7.0
+
+# Text processing  
+nltk>=3.7
+textblob>=0.17.1
+
+# Optional: For advanced analysis
+scikit-learn>=1.0.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+
+PyPDF2 
+transformers 
+pandas
+torch
+
+pypdf
