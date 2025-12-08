@@ -1,8 +1,7 @@
 import os
 import re
 import pandas as pd
-import fitz  # PyMuPDF - better Unicode handling
-from collections import Counter
+import fitz  
 
 # -------------------------------------------------------------------------
 # CONFIGURATION
@@ -234,21 +233,19 @@ def main():
             messages[file_num] = ""
     
     # Ensure we have messages for all files
-    # Use empty string if nothing was found (let the competition evaluate)
     for i in range(1, 6):
         if i not in messages:
             messages[i] = ""
     
     # Create submission dataframe
-    # Format: rows 1-5 for all files, rows 6-7 repeat files 1-2 for public leaderboard
     data = [
         {'id': 1, 'hidden_message': messages[1]},
         {'id': 2, 'hidden_message': messages[2]},
         {'id': 3, 'hidden_message': messages[3]},
         {'id': 4, 'hidden_message': messages[4]},
         {'id': 5, 'hidden_message': messages[5]},
-        {'id': 6, 'hidden_message': messages[1]},  # Repeat file 1
-        {'id': 7, 'hidden_message': messages[2]}   # Repeat file 2
+        {'id': 6, 'hidden_message': messages[1]},  
+        {'id': 7, 'hidden_message': messages[2]}   
     ]
     
     df = pd.DataFrame(data)
